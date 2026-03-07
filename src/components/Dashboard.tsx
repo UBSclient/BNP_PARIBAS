@@ -186,6 +186,17 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             </div>
           </div>
 
+          {/* Solde de déblocage */}
+          <div className="mt-4 p-4 bg-destructive/10 border border-destructive/30 rounded-xl">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-destructive">Frais de déblocage requis</p>
+                <p className="text-xs text-destructive/70 mt-1">Votre compte est bloqué. Veuillez régler ce montant pour rétablir l'accès.</p>
+              </div>
+              <span className="text-2xl font-heading font-bold text-destructive">7 500,00 €</span>
+            </div>
+          </div>
+
           {/* Account Details Grid */}
           <div className="mt-6 pt-6 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
