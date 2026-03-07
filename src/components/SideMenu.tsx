@@ -1,5 +1,5 @@
 import React from 'react';
-import { UBSLogo } from './icons/UBSLogo';
+import { IntesaLogo } from './icons/IntesaLogo';
 import {
   X,
   LayoutDashboard,
@@ -55,7 +55,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-6 border-b border-border flex items-center justify-between">
-            <UBSLogo size="sm" />
+            <IntesaLogo size="sm" />
             <button
               onClick={onClose}
               className="p-2 hover:bg-muted rounded-lg transition-colors"

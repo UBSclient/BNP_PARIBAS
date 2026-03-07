@@ -41,14 +41,14 @@ export const BankCard: React.FC<BankCardProps> = ({
       >
         <div className="flip-card-inner relative w-full h-full">
           {/* Front of Card */}
-          <div className="flip-card-front absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground via-foreground/95 to-foreground/80 p-6 text-card flex flex-col justify-between card-shadow">
+          <div className="flip-card-front absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(155,100%,21%)] via-[hsl(155,80%,18%)] to-[hsl(215,52%,23%)] p-6 text-white flex flex-col justify-between card-shadow">
             {/* Header */}
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">UBS</span>
+                <div className="w-10 h-10 bg-white/20 rounded-md flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">ISP</span>
                 </div>
-                <span className="text-lg font-heading font-bold">UBS</span>
+                <span className="text-lg font-heading font-bold">intesa sanpaolo</span>
               </div>
               <Wifi className="w-6 h-6 rotate-90" />
             </div>
@@ -71,25 +71,25 @@ export const BankCard: React.FC<BankCardProps> = ({
               </p>
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-xs text-card/60 uppercase">Titulaire</p>
+                  <p className="text-xs text-white/60 uppercase">Titulaire</p>
                   <p className="font-medium tracking-wide">{holderName}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-card/60 uppercase">Expire</p>
+                  <p className="text-xs text-white/60 uppercase">Expire</p>
                   <p className="font-mono">{formatExpiry(expiryDate)}</p>
                 </div>
                 <div className="flex flex-col items-end">
-                  <span className="text-xl font-bold italic text-card/90">VISA</span>
-                  <span className="text-xs text-card/60">Business</span>
+                  <span className="text-xl font-bold italic text-white/90">VISA</span>
+                  <span className="text-xs text-white/60">Business</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Back of Card */}
-          <div className="flip-card-back absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground via-foreground/95 to-foreground/80 flex flex-col card-shadow">
+          <div className="flip-card-back absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(155,100%,21%)] via-[hsl(155,80%,18%)] to-[hsl(215,52%,23%)] flex flex-col card-shadow">
             {/* Magnetic Strip */}
-            <div className="w-full h-12 bg-foreground/90 mt-6" />
+            <div className="w-full h-12 bg-black/40 mt-6" />
 
             {/* Signature Strip & CVV */}
             <div className="flex-1 p-6 flex flex-col justify-center">
@@ -106,15 +106,15 @@ export const BankCard: React.FC<BankCardProps> = ({
                 </div>
               </div>
 
-              <p className="text-card/60 text-xs mt-4 text-center">
+              <p className="text-white/60 text-xs mt-4 text-center">
                 Cliquez pour retourner la carte
               </p>
             </div>
 
             {/* Footer */}
-            <div className="p-4 flex justify-between items-center text-card/60 text-xs">
-              <span>Service client: +41 44 234 1111</span>
-              <span className="font-bold italic text-lg text-card/90">VISA</span>
+            <div className="p-4 flex justify-between items-center text-white/60 text-xs">
+              <span>Servizio Clienti: +39 011 555 1111</span>
+              <span className="font-bold italic text-lg text-white/90">VISA</span>
             </div>
           </div>
         </div>

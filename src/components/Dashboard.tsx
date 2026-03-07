@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Eye, EyeOff, LogOut } from 'lucide-react';
-import { UBSLogo } from './icons/UBSLogo';
+import { IntesaLogo } from './icons/IntesaLogo';
 import { BankCard } from './BankCard';
 import { QuickActions } from './QuickActions';
 import { TransactionHistory, Transaction } from './TransactionHistory';
@@ -128,7 +128,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             >
               <Menu className="w-6 h-6 text-foreground" />
             </button>
-            <UBSLogo size="sm" />
+            <IntesaLogo size="sm" />
           </div>
           <button
             onClick={handleLogout}
@@ -212,9 +212,9 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
           <div className="lg:col-span-2 animate-fade-up" style={{ animationDelay: '0.1s' }}>
             <BankCard
               holderName={user?.name || ''}
-              cardNumber="0076 2011 6238 5295"
-              expiryDate="07/28"
-              cvv="579"
+              cardNumber="0542 8111 0100 0001"
+              expiryDate="09/28"
+              cvv="341"
             />
           </div>
           <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>

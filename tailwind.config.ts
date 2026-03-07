@@ -58,10 +58,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        ubs: {
-          red: "hsl(var(--ubs-red))",
-          dark: "hsl(var(--ubs-dark))",
-          light: "hsl(var(--ubs-light))",
+        intesa: {
+          green: "hsl(var(--intesa-green))",
+          gold: "hsl(var(--intesa-gold))",
+          navy: "hsl(var(--intesa-navy))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
