@@ -1,30 +1,30 @@
 import React from 'react';
-import { UBSLogo } from './icons/UBSLogo';
+import { IntesaLogo } from './icons/IntesaLogo';
 import { Linkedin, Instagram, Youtube, Facebook, Twitter } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const columns = [
     {
-      title: "L'offre UBS",
+      title: "Prodotti e Servizi",
       links: [
-        'Compte pro éthique',
-        'Tableau de bord d\'impact',
-        '0% de frais à l\'étranger',
-        'Pré comptabilité intuitive',
-        'Paiements locaux et internationaux',
+        'Conti Correnti',
+        'Carte di Credito e Debito',
+        'Mutui e Prestiti',
+        'Investimenti e Risparmio',
+        'Assicurazioni',
       ],
     },
     {
-      title: 'Ressources',
-      links: ['Tarifs', 'Service Client', 'Carte de paiement international'],
+      title: 'Risorse',
+      links: ['Tariffe e Condizioni', 'Assistenza Clienti', 'Filiali e ATM', 'App Mobile'],
     },
     {
-      title: 'À propos',
+      title: 'Chi Siamo',
       links: [
-        'Travaillez chez UBS',
-        'Rejoindre notre communauté de pros engagés',
-        'Discuter d\'un partenariat éthique',
-        'Espace Presse',
+        'Lavora con noi',
+        'Sostenibilità',
+        'Investor Relations',
+        'Area Stampa',
       ],
     },
   ];
@@ -38,13 +38,14 @@ export const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    'Plan du site',
-    'Mentions légales',
-    'Sécurité de l\'information',
-    'Cookies',
-    'Gestion des cookies',
-    'Nous contacter',
-    'Accessibilité',
+    'Mappa del sito',
+    'Note legali',
+    'Privacy',
+    'Cookie Policy',
+    'Gestione Cookie',
+    'Contattaci',
+    'Accessibilità',
+    'Trasparenza',
   ];
 
   return (
@@ -55,12 +56,12 @@ export const Footer: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-primary-foreground rounded-sm flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">UBS</span>
+                <span className="text-primary font-bold text-xs">ISP</span>
               </div>
-              <span className="text-2xl font-heading font-bold">UBS</span>
+              <span className="text-xl font-heading font-bold">intesa sanpaolo</span>
             </div>
             <p className="text-primary-foreground/70 text-sm">
-              Votre partenaire bancaire de confiance pour un avenir financier solide.
+              La banca dei risultati. Il vostro partner finanziario di fiducia dal 2007.
             </p>
           </div>
 
@@ -87,7 +88,7 @@ export const Footer: React.FC = () => {
         {/* Social Links */}
         <div className="border-t border-primary-foreground/20 pt-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-medium">Suivez-nous :</p>
+            <p className="font-medium">Seguici su:</p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -106,7 +107,7 @@ export const Footer: React.FC = () => {
         {/* Legal Links */}
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-            <p className="text-primary-foreground/70">© UBS 2025</p>
+            <p className="text-primary-foreground/70">© Intesa Sanpaolo 2025 - Tutti i diritti riservati</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
               {legalLinks.map((link, index) => (
                 <a

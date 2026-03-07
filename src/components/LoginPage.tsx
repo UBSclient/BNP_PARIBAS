@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UBSLogo } from './icons/UBSLogo';
+import { IntesaLogo } from './icons/IntesaLogo';
 import { Eye, EyeOff, Lock, User, Shield } from 'lucide-react';
 
 interface LoginPageProps {
@@ -32,7 +32,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="flex justify-center mb-8 animate-fade-up">
-          <UBSLogo size="lg" />
+          <IntesaLogo size="lg" />
         </div>
 
         {/* Login Card */}

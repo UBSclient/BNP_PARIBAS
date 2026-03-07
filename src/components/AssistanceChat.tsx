@@ -17,7 +17,7 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Bienvenue sur l\'assistance UBS. Comment pouvons-nous vous aider aujourd\'hui ?',
+      text: 'Bienvenue sur l\'assistance Intesa Sanpaolo. Comment pouvons-nous vous aider aujourd\'hui ?',
       isBot: true,
       timestamp: new Date(),
     },
@@ -65,7 +65,7 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
               <ArrowLeft className="w-5 h-5" />
             </button>
             <div>
-              <h2 className="font-heading font-bold">Assistance UBS</h2>
+              <h2 className="font-heading font-bold">Assistance Intesa Sanpaolo</h2>
               <p className="text-sm text-primary-foreground/70">En ligne</p>
             </div>
           </div>

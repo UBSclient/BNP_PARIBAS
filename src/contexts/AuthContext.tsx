@@ -22,19 +22,19 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const defaultUser: User = {
-  name: 'CATHERINE LAFOND',
-  accountNumber: 'CH93 0076 2011 6238 5295 7',
-  iban: 'FR76 2573 3000 0100 0016 1501 27',
-  bic: 'USBWCHZH80A',
-  address: '15 avenue des Fleurs 06000 Nice France',
-  bankCode: '25738',
-  branchCode: '00011',
+  name: 'GIULIA ROSSI',
+  accountNumber: 'IT60 X054 2811 1010 0000 0123 456',
+  iban: 'IT60 X054 2811 1010 0000 0123 456',
+  bic: 'BCITITMM',
+  address: 'Via Roma 42, 90100 Palermo, Italia',
+  bankCode: '05428',
+  branchCode: '11101',
 };
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [balance, setBalance] = useState(730000);
+  const [balance, setBalance] = useState(534000);
 
   const login = async (username: string, password: string): Promise<boolean> => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
