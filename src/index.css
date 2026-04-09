@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,24 +7,24 @@
 @layer base {
   :root {
     --background: 0 0% 96%;
-    --foreground: 215 52% 23%;
+    --foreground: 200 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 52% 23%;
+    --card-foreground: 200 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 52% 23%;
+    --popover-foreground: 200 20% 20%;
 
-    --primary: 155 100% 21%;
+    --primary: 186 100% 21%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 37 92% 54%;
+    --secondary: 19 88% 54%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 94%;
-    --muted-foreground: 215 20% 45%;
+    --muted-foreground: 200 10% 45%;
 
-    --accent: 37 92% 54%;
+    --accent: 19 88% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,47 +35,47 @@
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 155 100% 21%;
+    --ring: 186 100% 21%;
 
     --radius: 0.75rem;
 
-    --intesa-green: 155 100% 21%;
-    --intesa-gold: 37 92% 54%;
-    --intesa-navy: 215 52% 23%;
+    --bni-teal: 186 100% 21%;
+    --bni-orange: 19 88% 54%;
+    --bni-dark: 200 20% 20%;
 
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Source Sans 3', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 215 52% 23%;
-    --sidebar-primary: 155 100% 21%;
+    --sidebar-foreground: 200 20% 20%;
+    --sidebar-primary: 186 100% 21%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 215 52% 23%;
+    --sidebar-accent-foreground: 200 20% 20%;
     --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 155 100% 21%;
+    --sidebar-ring: 186 100% 21%;
   }
 
   .dark {
-    --background: 215 40% 8%;
+    --background: 200 30% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 215 40% 12%;
+    --card: 200 30% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 40% 12%;
+    --popover: 200 30% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 155 80% 30%;
+    --primary: 186 80% 28%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 37 92% 54%;
+    --secondary: 19 88% 54%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 30% 18%;
+    --muted: 200 20% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 37 92% 54%;
+    --accent: 19 88% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
@@ -84,18 +84,18 @@
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 215 30% 25%;
-    --input: 215 30% 25%;
-    --ring: 155 80% 30%;
+    --border: 200 20% 25%;
+    --input: 200 20% 25%;
+    --ring: 186 80% 28%;
 
-    --sidebar-background: 215 40% 10%;
+    --sidebar-background: 200 30% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 155 80% 30%;
+    --sidebar-primary: 186 80% 28%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 30% 18%;
+    --sidebar-accent: 200 20% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 215 30% 25%;
-    --sidebar-ring: 155 80% 30%;
+    --sidebar-border: 200 20% 25%;
+    --sidebar-ring: 186 80% 28%;
   }
 }
 
@@ -114,7 +114,7 @@
 }
 
 @layer components {
-  .intesa-gradient {
+  .bni-gradient {
     @apply bg-gradient-to-br from-primary to-primary/80;
   }
 
@@ -190,45 +190,23 @@
   }
 
   @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
 
   @keyframes slideOutLeft {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
   }
 
   @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
-    }
-    50% {
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
-    }
+    0%, 100% { box-shadow: 0 0 5px hsl(var(--primary) / 0.5); }
+    50% { box-shadow: 0 0 20px hsl(var(--primary) / 0.8); }
   }
 
   .pulse-glow {

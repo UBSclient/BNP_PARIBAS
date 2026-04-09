@@ -22,13 +22,13 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const defaultUser: User = {
-  name: 'GIULIA ROSSI',
-  accountNumber: 'IT60 X054 2811 1010 0000 0123 456',
-  iban: 'IT60 X054 2811 1010 0000 0123 456',
-  bic: 'BCITITMM',
-  address: 'Via Roma 42, 90100 Palermo, Italia',
-  bankCode: '05428',
-  branchCode: '11101',
+  name: 'VALÉRIE DANESS',
+  accountNumber: 'FR76 3000 4028 3700 0100 0123 456',
+  iban: 'FR76 3000 4028 3700 0100 0123 456',
+  bic: 'BNPAFRPP',
+  address: '15 Rue de la République, 75001 Paris, France',
+  bankCode: '30004',
+  branchCode: '02837',
 };
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
