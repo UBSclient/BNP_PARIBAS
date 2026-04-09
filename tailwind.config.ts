@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Source Sans 3', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Open Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -58,10 +58,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        intesa: {
-          green: "hsl(var(--intesa-green))",
-          gold: "hsl(var(--intesa-gold))",
-          navy: "hsl(var(--intesa-navy))",
+        bni: {
+          teal: "hsl(var(--bni-teal))",
+          orange: "hsl(var(--bni-orange))",
+          dark: "hsl(var(--bni-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
