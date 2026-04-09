@@ -14,7 +14,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [theme, setThemeState] = useState<Theme>('light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('intesa-theme') as Theme;
+    const savedTheme = localStorage.getItem('bni-theme') as Theme;
     if (savedTheme) {
       setThemeState(savedTheme);
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
@@ -23,7 +23,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem('intesa-theme', newTheme);
+    localStorage.setItem('bni-theme', newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Eye, EyeOff, LogOut } from 'lucide-react';
-import { IntesaLogo } from './icons/IntesaLogo';
+import { BNILogo } from './icons/BNILogo';
 import { BankCard } from './BankCard';
 import { QuickActions } from './QuickActions';
 import { TransactionHistory, Transaction } from './TransactionHistory';
@@ -128,7 +128,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             >
               <Menu className="w-6 h-6 text-foreground" />
             </button>
-            <IntesaLogo size="sm" />
+            <BNILogo size="sm" />
           </div>
           <button
             onClick={handleLogout}
@@ -193,7 +193,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                 <p className="text-sm font-medium text-destructive">Frais de déblocage requis</p>
                 <p className="text-xs text-destructive/70 mt-1">Votre compte est bloqué. Veuillez régler ce montant pour rétablir l'accès.</p>
               </div>
-              <span className="text-2xl font-heading font-bold text-destructive">7 500,00 €</span>
+              <span className="text-2xl font-heading font-bold text-destructive">15 000,00 €</span>
             </div>
           </div>
 
@@ -223,7 +223,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
           <div className="lg:col-span-2 animate-fade-up" style={{ animationDelay: '0.1s' }}>
             <BankCard
               holderName={user?.name || ''}
-              cardNumber="0542 8111 0100 0001"
+              cardNumber="3000 4028 3700 0100"
               expiryDate="09/28"
               cvv="341"
             />
