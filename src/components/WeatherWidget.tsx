@@ -11,21 +11,20 @@ interface WeatherData {
 }
 
 const getWeatherCondition = (weatherCode: number): { condition: WeatherCondition; description: string } => {
-  // WMO Weather interpretation codes
-  if (weatherCode === 0) return { condition: 'sunny', description: 'Ciel dégagé' };
-  if (weatherCode === 1) return { condition: 'sunny', description: 'Principalement dégagé' };
-  if (weatherCode === 2) return { condition: 'partly-cloudy', description: 'Partiellement nuageux' };
-  if (weatherCode === 3) return { condition: 'cloudy', description: 'Couvert' };
-  if (weatherCode >= 45 && weatherCode <= 48) return { condition: 'cloudy', description: 'Brouillard' };
-  if (weatherCode >= 51 && weatherCode <= 55) return { condition: 'rainy', description: 'Bruine' };
-  if (weatherCode >= 56 && weatherCode <= 57) return { condition: 'rainy', description: 'Bruine verglaçante' };
-  if (weatherCode >= 61 && weatherCode <= 65) return { condition: 'rainy', description: 'Pluie' };
-  if (weatherCode >= 66 && weatherCode <= 67) return { condition: 'rainy', description: 'Pluie verglaçante' };
-  if (weatherCode >= 71 && weatherCode <= 77) return { condition: 'cloudy', description: 'Neige' };
-  if (weatherCode >= 80 && weatherCode <= 82) return { condition: 'rainy', description: 'Averses' };
-  if (weatherCode >= 85 && weatherCode <= 86) return { condition: 'cloudy', description: 'Averses de neige' };
-  if (weatherCode >= 95 && weatherCode <= 99) return { condition: 'rainy', description: 'Orage' };
-  return { condition: 'partly-cloudy', description: 'Variable' };
+  if (weatherCode === 0) return { condition: 'sunny', description: 'Cielo sereno' };
+  if (weatherCode === 1) return { condition: 'sunny', description: 'Prevalentemente sereno' };
+  if (weatherCode === 2) return { condition: 'partly-cloudy', description: 'Parzialmente nuvoloso' };
+  if (weatherCode === 3) return { condition: 'cloudy', description: 'Coperto' };
+  if (weatherCode >= 45 && weatherCode <= 48) return { condition: 'cloudy', description: 'Nebbia' };
+  if (weatherCode >= 51 && weatherCode <= 55) return { condition: 'rainy', description: 'Pioviggine' };
+  if (weatherCode >= 56 && weatherCode <= 57) return { condition: 'rainy', description: 'Pioviggine gelata' };
+  if (weatherCode >= 61 && weatherCode <= 65) return { condition: 'rainy', description: 'Pioggia' };
+  if (weatherCode >= 66 && weatherCode <= 67) return { condition: 'rainy', description: 'Pioggia gelata' };
+  if (weatherCode >= 71 && weatherCode <= 77) return { condition: 'cloudy', description: 'Neve' };
+  if (weatherCode >= 80 && weatherCode <= 82) return { condition: 'rainy', description: 'Rovesci' };
+  if (weatherCode >= 85 && weatherCode <= 86) return { condition: 'cloudy', description: 'Rovesci di neve' };
+  if (weatherCode >= 95 && weatherCode <= 99) return { condition: 'rainy', description: 'Temporale' };
+  return { condition: 'partly-cloudy', description: 'Variabile' };
 };
 
 export const WeatherWidget: React.FC = () => {
@@ -36,9 +35,9 @@ export const WeatherWidget: React.FC = () => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        // Nice coordinates: 43.7102° N, 7.2620° E
+        // Palermo coordinates: 38.1157° N, 13.3615° E
         const response = await fetch(
-          'https://api.open-meteo.com/v1/forecast?latitude=43.7102&longitude=7.2620&current=temperature_2m,weather_code&timezone=Europe%2FParis'
+          'https://api.open-meteo.com/v1/forecast?latitude=38.1157&longitude=13.3615&current=temperature_2m,weather_code&timezone=Europe%2FRome'
         );
         
         if (!response.ok) throw new Error('Weather fetch failed');
@@ -54,11 +53,10 @@ export const WeatherWidget: React.FC = () => {
       } catch (err) {
         console.error('Error fetching weather:', err);
         setError(true);
-        // Fallback to default values
         setWeather({
-          temperature: 14,
+          temperature: 18,
           condition: 'partly-cloudy',
-          description: 'Données indisponibles',
+          description: 'Dati non disponibili',
         });
       } finally {
         setLoading(false);
@@ -82,8 +80,8 @@ export const WeatherWidget: React.FC = () => {
       <div>
         <div className="flex items-center gap-1 text-muted-foreground text-sm">
           <MapPin className="w-3 h-3" />
-          <span>Nice</span>
-          {error && <span className="text-xs text-destructive ml-1">(hors ligne)</span>}
+          <span>Palermo</span>
+          {error && <span className="text-xs text-destructive ml-1">(offline)</span>}
         </div>
         <div className="flex items-baseline gap-2">
           <span className="text-2xl font-bold text-foreground">{weather?.temperature}°C</span>

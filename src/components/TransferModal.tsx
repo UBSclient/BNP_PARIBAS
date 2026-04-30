@@ -53,30 +53,28 @@ export const TransferModal: React.FC<TransferModalProps> = ({
   return (
     <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
       <div className="bg-card rounded-2xl card-shadow w-full max-w-md max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="p-6 border-b border-border flex items-center justify-between sticky top-0 bg-card">
           <h2 className="text-xl font-heading font-bold text-foreground">
-            Nouveau virement
+            Nuovo bonifico
           </h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-muted rounded-lg transition-colors"
-            aria-label="Fermer"
+            aria-label="Chiudi"
           >
             <X className="w-5 h-5 text-muted-foreground" />
           </button>
         </div>
 
-        {/* Content */}
         <div className="p-6">
           {isSuccess ? (
             <div className="text-center py-8">
               <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
               <h3 className="text-xl font-bold text-foreground mb-2">
-                Virement effectué !
+                Bonifico effettuato!
               </h3>
               <p className="text-muted-foreground">
-                Virement de {parseFloat(formData.amount).toLocaleString('fr-FR')} € effectué avec succès.
+                Bonifico di {parseFloat(formData.amount).toLocaleString('it-IT')} € effettuato con successo.
               </p>
             </div>
           ) : (
@@ -84,7 +82,7 @@ export const TransferModal: React.FC<TransferModalProps> = ({
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1">
-                    Nom du bénéficiaire
+                    Cognome del beneficiario
                   </label>
                   <input
                     type="text"
@@ -98,7 +96,7 @@ export const TransferModal: React.FC<TransferModalProps> = ({
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1">
-                    Prénom du bénéficiaire
+                    Nome del beneficiario
                   </label>
                   <input
                     type="text"
@@ -114,7 +112,7 @@ export const TransferModal: React.FC<TransferModalProps> = ({
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
-                  Montant (€)
+                  Importo (€)
                 </label>
                 <input
                   type="number"
@@ -136,14 +134,14 @@ export const TransferModal: React.FC<TransferModalProps> = ({
                   value={formData.iban}
                   onChange={(e) => setFormData({ ...formData, iban: e.target.value })}
                   className="w-full px-4 py-2 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary font-mono text-sm"
-                  placeholder="FR76 XXXX XXXX XXXX XXXX XXXX XXX"
+                  placeholder="IT60 X054 2811 1010 0000 0123 456"
                   required
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
-                  Code SWIFT
+                  Codice SWIFT
                 </label>
                 <input
                   type="text"
@@ -156,7 +154,7 @@ export const TransferModal: React.FC<TransferModalProps> = ({
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
-                  Libellé
+                  Causale
                 </label>
                 <input
                   type="text"
@@ -175,12 +173,12 @@ export const TransferModal: React.FC<TransferModalProps> = ({
                 {isProcessing ? (
                   <>
                     <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                    Traitement en cours…
+                    Elaborazione in corso…
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Effectuer le virement
+                    Effettua il bonifico
                   </>
                 )}
               </button>

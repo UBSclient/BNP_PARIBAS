@@ -35,7 +35,7 @@ export const BankCard: React.FC<BankCardProps> = ({
         className={`flip-card w-full aspect-[1.586/1] cursor-pointer ${isFlipped ? 'flipped' : ''}`}
         onClick={() => setIsFlipped(!isFlipped)}
         role="button"
-        aria-label={isFlipped ? 'Voir le recto de la carte' : 'Voir le verso de la carte'}
+        aria-label={isFlipped ? 'Vedi il fronte della carta' : 'Vedi il retro della carta'}
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
       >
@@ -71,11 +71,11 @@ export const BankCard: React.FC<BankCardProps> = ({
               </p>
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-xs text-white/60 uppercase">Titulaire</p>
+                  <p className="text-xs text-white/60 uppercase">Titolare</p>
                   <p className="font-medium tracking-wide">{holderName}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-white/60 uppercase">Expire</p>
+                  <p className="text-xs text-white/60 uppercase">Scadenza</p>
                   <p className="font-mono">{formatExpiry(expiryDate)}</p>
                 </div>
                 <div className="flex flex-col items-end">
@@ -107,7 +107,7 @@ export const BankCard: React.FC<BankCardProps> = ({
               </div>
 
               <p className="text-white/60 text-xs mt-4 text-center">
-                Cliquez pour retourner la carte
+                Clicca per girare la carta
               </p>
             </div>
 
@@ -127,17 +127,17 @@ export const BankCard: React.FC<BankCardProps> = ({
           setShowDetails(!showDetails);
         }}
         className="mt-4 w-full flex items-center justify-center gap-2 py-2 px-4 bg-card border border-border rounded-xl text-sm font-medium hover:bg-muted transition-colors"
-        aria-label={showDetails ? 'Masquer les détails' : 'Afficher les détails'}
+        aria-label={showDetails ? 'Nascondi i dettagli' : 'Mostra i dettagli'}
       >
         {showDetails ? (
           <>
             <EyeOff className="w-4 h-4" />
-            Masquer les détails
+            Nascondi i dettagli
           </>
         ) : (
           <>
             <Eye className="w-4 h-4" />
-            Afficher les détails
+            Mostra i dettagli
           </>
         )}
       </button>

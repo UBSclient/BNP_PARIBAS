@@ -13,13 +13,13 @@ export const NotificationBanner: React.FC = () => {
           <Rocket className="w-5 h-5 text-primary" />
         </div>
         <p className="text-sm md:text-base text-foreground">
-          <span className="font-semibold">Nouveauté :</span> découvrez l'impact environnemental de vos dépenses professionnelles !
+          <span className="font-semibold">Novità:</span> scopri l'impatto ambientale delle tue spese professionali!
         </p>
       </div>
       <button
         onClick={() => setIsVisible(false)}
         className="p-2 hover:bg-muted rounded-lg transition-colors flex-shrink-0"
-        aria-label="Fermer la notification"
+        aria-label="Chiudi la notifica"
       >
         <X className="w-5 h-5 text-muted-foreground" />
       </button>

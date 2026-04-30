@@ -15,30 +15,10 @@ export const QuickActions: React.FC<QuickActionsProps> = ({
   onAssistance,
 }) => {
   const actions = [
-    {
-      icon: Send,
-      label: 'Virement',
-      onClick: onTransfer,
-      bgClass: 'bg-primary',
-    },
-    {
-      icon: FileText,
-      label: 'Facture',
-      onClick: onInvoice,
-      bgClass: 'bg-foreground',
-    },
-    {
-      icon: Settings,
-      label: 'Paramètres',
-      onClick: onSettings,
-      bgClass: 'bg-primary',
-    },
-    {
-      icon: MessageCircle,
-      label: 'Assistance',
-      onClick: onAssistance,
-      bgClass: 'bg-foreground',
-    },
+    { icon: Send, label: 'Bonifico', onClick: onTransfer, bgClass: 'bg-primary' },
+    { icon: FileText, label: 'Fattura', onClick: onInvoice, bgClass: 'bg-foreground' },
+    { icon: Settings, label: 'Impostazioni', onClick: onSettings, bgClass: 'bg-primary' },
+    { icon: MessageCircle, label: 'Assistenza', onClick: onAssistance, bgClass: 'bg-foreground' },
   ];
 
   return (

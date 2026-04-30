@@ -22,7 +22,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
     const success = await onLogin(username, password);
     
     if (!success) {
-      setError('Identifiants incorrects. Veuillez réessayer.');
+      setError('Credenziali errate. Riprova.');
       setIsLoading(false);
     }
   };
@@ -30,25 +30,22 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   return (
     <div className="min-h-screen bg-muted flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
         <div className="flex justify-center mb-8 animate-fade-up">
           <IntesaLogo size="lg" />
         </div>
 
-        {/* Login Card */}
         <div className="bg-card rounded-2xl card-shadow p-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
           <h1 className="text-2xl font-heading font-bold text-center mb-2 text-foreground">
-            Espace Client Professionnel
+            Area Clienti Business
           </h1>
           <p className="text-muted-foreground text-center mb-8">
-            Connectez-vous à votre compte
+            Accedi al tuo conto
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Username Field */}
             <div className="space-y-2">
               <label htmlFor="username" className="block text-sm font-medium text-foreground">
-                Identifiant de connexion
+                Codice utente
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -58,17 +55,16 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  placeholder="Entrez votre identifiant"
+                  placeholder="Inserisci il codice utente"
                   required
-                  aria-label="Identifiant de connexion"
+                  aria-label="Codice utente"
                 />
               </div>
             </div>
 
-            {/* Password Field */}
             <div className="space-y-2">
               <label htmlFor="password" className="block text-sm font-medium text-foreground">
-                Mot de passe
+                Password
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -78,22 +74,21 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-10 pr-12 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  placeholder="Entrez votre mot de passe"
+                  placeholder="Inserisci la password"
                   required
-                  aria-label="Mot de passe"
+                  aria-label="Password"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
+                  aria-label={showPassword ? 'Nascondi la password' : 'Mostra la password'}
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
@@ -102,24 +97,22 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                   onChange={(e) => setRememberMe(e.target.checked)}
                   className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
                 />
-                <span className="text-sm text-muted-foreground">Se souvenir de moi</span>
+                <span className="text-sm text-muted-foreground">Ricordami</span>
               </label>
               <button
                 type="button"
                 className="text-sm text-primary hover:underline font-medium"
               >
-                Mot de passe oublié ?
+                Password dimenticata?
               </button>
             </div>
 
-            {/* Error Message */}
             {error && (
               <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive text-sm text-center">
                 {error}
               </div>
             )}
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading}
@@ -128,19 +121,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               {isLoading ? (
                 <>
                   <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  Connexion en cours…
+                  Accesso in corso…
                 </>
               ) : (
-                'Connexion'
+                'Accedi'
               )}
             </button>
           </form>
         </div>
 
-        {/* Security Badge */}
         <div className="flex items-center justify-center gap-2 mt-6 text-muted-foreground animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <Shield className="w-4 h-4" />
-          <span className="text-sm">Connexion sécurisée</span>
+          <span className="text-sm">Connessione sicura</span>
         </div>
       </div>
     </div>
