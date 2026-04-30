@@ -22,24 +22,24 @@ interface DashboardProps {
 
 const initialTransactions: Transaction[] = [
   { id: '0', date: '04/01/2026', label: 'FR84 2004 1010 0819 0431 8A02 926', amount: 5000, type: 'debit', status: 'rejected' },
-  { id: '2', date: '03/12/2025', label: 'Virement reçu : Paiement client Alpha', amount: 15200, type: 'credit' },
-  { id: '3', date: '02/12/2025', label: 'Abonnement SaaS Pro', amount: 49.99, type: 'debit' },
-  { id: '4', date: '30/11/2025', label: 'Loyer Bureau Octobre', amount: 1850, type: 'debit' },
-  { id: '5', date: '28/11/2025', label: 'Frais de déplacement Pro', amount: 125.50, type: 'debit' },
-  { id: '6', date: '20/11/2025', label: 'Virement État (TVA Rem.)', amount: 1780, type: 'credit' },
-  { id: '7', date: '15/11/2025', label: 'Paiement Fournisseur Beta', amount: 8900, type: 'debit' },
-  { id: '8', date: '01/11/2025', label: 'Salaire Équipe (x3)', amount: 4500, type: 'debit' },
-  { id: '9', date: '28/10/2025', label: 'Virement reçu : Client Gamma', amount: 8500, type: 'credit' },
-  { id: '10', date: '25/10/2025', label: 'Fournitures bureau', amount: 342.80, type: 'debit' },
-  { id: '11', date: '20/10/2025', label: 'Assurance professionnelle', amount: 520, type: 'debit' },
-  { id: '12', date: '15/10/2025', label: 'Virement reçu : Contrat Delta', amount: 22000, type: 'credit' },
-  { id: '13', date: '10/10/2025', label: 'Hébergement web annuel', amount: 199, type: 'debit' },
-  { id: '14', date: '05/10/2025', label: 'Marketing digital', amount: 1500, type: 'debit' },
-  { id: '15', date: '01/10/2025', label: 'Salaire Équipe (x3)', amount: 4500, type: 'debit' },
-  { id: '16', date: '28/09/2025', label: 'Virement reçu : Client Epsilon', amount: 6800, type: 'credit' },
-  { id: '17', date: '22/09/2025', label: 'Maintenance équipements', amount: 890, type: 'debit' },
-  { id: '18', date: '15/09/2025', label: 'Formation professionnelle', amount: 2200, type: 'debit' },
-  { id: '19', date: '10/09/2025', label: 'Virement reçu : Subvention BPI', amount: 15000, type: 'credit' },
+  { id: '2', date: '03/12/2025', label: 'Bonifico ricevuto: Pagamento cliente Alpha', amount: 15200, type: 'credit' },
+  { id: '3', date: '02/12/2025', label: 'Abbonamento SaaS Pro', amount: 49.99, type: 'debit' },
+  { id: '4', date: '30/11/2025', label: 'Affitto ufficio Ottobre', amount: 1850, type: 'debit' },
+  { id: '5', date: '28/11/2025', label: 'Spese di trasferta', amount: 125.50, type: 'debit' },
+  { id: '6', date: '20/11/2025', label: 'Bonifico Stato (Rimb. IVA)', amount: 1780, type: 'credit' },
+  { id: '7', date: '15/11/2025', label: 'Pagamento fornitore Beta', amount: 8900, type: 'debit' },
+  { id: '8', date: '01/11/2025', label: 'Stipendi team (x3)', amount: 4500, type: 'debit' },
+  { id: '9', date: '28/10/2025', label: 'Bonifico ricevuto: Cliente Gamma', amount: 8500, type: 'credit' },
+  { id: '10', date: '25/10/2025', label: 'Forniture ufficio', amount: 342.80, type: 'debit' },
+  { id: '11', date: '20/10/2025', label: 'Assicurazione professionale', amount: 520, type: 'debit' },
+  { id: '12', date: '15/10/2025', label: 'Bonifico ricevuto: Contratto Delta', amount: 22000, type: 'credit' },
+  { id: '13', date: '10/10/2025', label: 'Hosting web annuale', amount: 199, type: 'debit' },
+  { id: '14', date: '05/10/2025', label: 'Marketing digitale', amount: 1500, type: 'debit' },
+  { id: '15', date: '01/10/2025', label: 'Stipendi team (x3)', amount: 4500, type: 'debit' },
+  { id: '16', date: '28/09/2025', label: 'Bonifico ricevuto: Cliente Epsilon', amount: 6800, type: 'credit' },
+  { id: '17', date: '22/09/2025', label: 'Manutenzione attrezzature', amount: 890, type: 'debit' },
+  { id: '18', date: '15/09/2025', label: 'Formazione professionale', amount: 2200, type: 'debit' },
+  { id: '19', date: '10/09/2025', label: 'Bonifico ricevuto: Contributo statale', amount: 15000, type: 'credit' },
 ];
 
 export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
@@ -68,8 +68,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
     updateBalance(amount);
     const newTransaction: Transaction = {
       id: Date.now().toString(),
-      date: new Date().toLocaleDateString('fr-FR'),
-      label: 'Virement effectué',
+      date: new Date().toLocaleDateString('it-IT'),
+      label: 'Bonifico effettuato',
       amount: Math.abs(amount),
       type: 'debit',
     };
@@ -80,8 +80,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
     updateBalance(amount);
     const newTransaction: Transaction = {
       id: Date.now().toString(),
-      date: new Date().toLocaleDateString('fr-FR'),
-      label: 'Paiement facture',
+      date: new Date().toLocaleDateString('it-IT'),
+      label: 'Pagamento bolletta',
       amount: Math.abs(amount),
       type: 'debit',
     };
@@ -93,12 +93,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
       setIsSettingsOpen(true);
     } else {
       setCurrentPage(page);
-      alert(`Navigation vers ${page.charAt(0).toUpperCase() + page.slice(1)}`);
+      alert(`Navigazione verso ${page.charAt(0).toUpperCase() + page.slice(1)}`);
     }
   };
 
   const formatBalance = (amount: number) => {
-    return new Intl.NumberFormat('fr-FR', {
+    return new Intl.NumberFormat('it-IT', {
       style: 'currency',
       currency: 'EUR',
     }).format(amount);
@@ -109,7 +109,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
       <div className="min-h-screen bg-muted flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-lg font-medium text-foreground">Déconnexion en cours…</p>
+          <p className="text-lg font-medium text-foreground">Disconnessione in corso…</p>
         </div>
       </div>
     );
@@ -124,7 +124,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             <button
               onClick={() => setIsMenuOpen(true)}
               className="p-2 hover:bg-muted rounded-lg transition-colors"
-              aria-label="Ouvrir le menu"
+              aria-label="Apri il menu"
             >
               <Menu className="w-6 h-6 text-foreground" />
             </button>
@@ -135,7 +135,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             className="flex items-center gap-2 px-4 py-2 text-destructive hover:bg-destructive/10 rounded-lg transition-colors"
           >
             <LogOut className="w-5 h-5" />
-            <span className="hidden md:inline font-medium">Déconnexion</span>
+            <span className="hidden md:inline font-medium">Disconnessione</span>
           </button>
         </div>
       </header>
@@ -158,12 +158,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
         <div className="bg-card rounded-2xl card-shadow p-6 animate-fade-up">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Titulaire du compte</p>
+              <p className="text-sm text-muted-foreground mb-1">Titolare del conto</p>
               <h2 className="text-xl font-heading font-bold text-foreground">{user?.name}</h2>
               <p className="text-sm text-muted-foreground mt-1">{user?.address}</p>
             </div>
             <div className="text-left md:text-right">
-              <p className="text-sm text-muted-foreground mb-1">Solde actuel</p>
+              <p className="text-sm text-muted-foreground mb-1">Saldo attuale</p>
               <div className="flex items-center gap-2 md:justify-end">
                 <span className="text-2xl md:text-3xl font-heading font-bold text-foreground">
                   {showBalance ? formatBalance(balance) : '••••••,00 €'}
@@ -171,7 +171,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                 <button
                   onClick={() => setShowBalance(!showBalance)}
                   className="p-2 hover:bg-muted rounded-lg transition-colors"
-                  aria-label={showBalance ? 'Masquer le solde' : 'Afficher le solde'}
+                  aria-label={showBalance ? 'Nascondi il saldo' : 'Mostra il saldo'}
                 >
                   {showBalance ? (
                     <EyeOff className="w-5 h-5 text-muted-foreground" />
@@ -181,7 +181,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                 </button>
               </div>
               <span className="inline-block mt-1 px-2 py-0.5 bg-destructive/10 text-destructive text-xs font-medium rounded-full">
-                Bloqué
+                Bloccato
               </span>
             </div>
           </div>
@@ -189,11 +189,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
           {/* Account Details Grid */}
           <div className="mt-6 pt-6 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <p className="text-xs text-muted-foreground">Code Banque</p>
+              <p className="text-xs text-muted-foreground">Codice ABI</p>
               <p className="font-mono font-medium text-foreground">{user?.bankCode}</p>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">Code Agence</p>
+              <p className="text-xs text-muted-foreground">Codice CAB</p>
               <p className="font-mono font-medium text-foreground">{user?.branchCode}</p>
             </div>
             <div className="col-span-2">
@@ -224,7 +224,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
 
         {/* Quick Actions */}
         <div className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <h3 className="text-lg font-heading font-bold text-foreground mb-4">Actions rapides</h3>
+          <h3 className="text-lg font-heading font-bold text-foreground mb-4">Azioni rapide</h3>
           <QuickActions
             onTransfer={() => handleQuickAction(() => setIsTransferOpen(true))}
             onInvoice={() => handleQuickAction(() => setIsInvoiceOpen(true))}
