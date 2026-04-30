@@ -23,7 +23,7 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
   const displayedTransactions = showAll ? transactions : transactions.slice(0, 4);
 
   const formatAmount = (amount: number, type: 'credit' | 'debit') => {
-    const formatted = new Intl.NumberFormat('fr-FR', {
+    const formatted = new Intl.NumberFormat('it-IT', {
       style: 'currency',
       currency: 'EUR',
     }).format(Math.abs(amount));
@@ -39,7 +39,7 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
     <div className="bg-card rounded-2xl card-shadow overflow-hidden">
       <div className="p-6 border-b border-border">
         <h3 className="text-lg font-heading font-bold text-foreground">
-          Historique des transactions
+          Cronologia delle transazioni
         </h3>
       </div>
 
@@ -76,7 +76,7 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
                 <p className="text-xs text-muted-foreground">
                   {formatDate(transaction.date)}
                   {transaction.status === 'rejected' && (
-                    <span className="ml-2 text-destructive font-medium">• Refusé</span>
+                    <span className="ml-2 text-destructive font-medium">• Rifiutata</span>
                   )}
                 </p>
               </div>
@@ -104,11 +104,11 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
           >
             {showAll ? (
               <>
-                Voir moins <ChevronUp className="w-4 h-4" />
+                Mostra meno <ChevronUp className="w-4 h-4" />
               </>
             ) : (
               <>
-                Voir tout ({transactions.length}) <ChevronDown className="w-4 h-4" />
+                Mostra tutto ({transactions.length}) <ChevronDown className="w-4 h-4" />
               </>
             )}
           </button>

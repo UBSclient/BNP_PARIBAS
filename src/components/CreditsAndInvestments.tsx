@@ -14,38 +14,38 @@ interface AccordionItem {
 const items: AccordionItem[] = [
   {
     id: '1',
-    title: 'CRÉDIT IMMOBILIER',
+    title: 'MUTUO IMMOBILIARE',
     type: 'credit',
     details: [
-      { label: 'Montant initial', value: '350 000 €' },
-      { label: 'Capital restant dû', value: '285 420 €' },
-      { label: 'Taux', value: '2.15%' },
-      { label: 'Échéance', value: 'Mars 2045' },
-      { label: 'Mensualité', value: '1 450 €' },
+      { label: 'Importo iniziale', value: '350.000 €' },
+      { label: 'Capitale residuo', value: '285.420 €' },
+      { label: 'Tasso', value: '2,15%' },
+      { label: 'Scadenza', value: 'Marzo 2045' },
+      { label: 'Rata mensile', value: '1.450 €' },
     ],
   },
   {
     id: '2',
-    title: 'BON DE CAISSE',
+    title: 'BUONO FRUTTIFERO',
     type: 'investment',
     details: [
-      { label: 'Montant placé', value: '50 000 €' },
-      { label: 'Taux garanti', value: '3.25%' },
-      { label: 'Durée', value: '24 mois' },
-      { label: 'Échéance', value: 'Juin 2026' },
-      { label: 'Intérêts acquis', value: '1 625 €' },
+      { label: 'Importo investito', value: '50.000 €' },
+      { label: 'Tasso garantito', value: '3,25%' },
+      { label: 'Durata', value: '24 mesi' },
+      { label: 'Scadenza', value: 'Giugno 2026' },
+      { label: 'Interessi maturati', value: '1.625 €' },
     ],
   },
   {
     id: '3',
-    title: 'DAT REÇUS DES PARTICULIERS',
+    title: 'DEPOSITO VINCOLATO',
     type: 'investment',
     details: [
-      { label: 'Montant placé', value: '100 000 €' },
-      { label: 'Taux', value: '2.85%' },
-      { label: 'Durée', value: '36 mois' },
-      { label: 'Échéance', value: 'Décembre 2027' },
-      { label: 'Intérêts estimés', value: '8 550 €' },
+      { label: 'Importo investito', value: '100.000 €' },
+      { label: 'Tasso', value: '2,85%' },
+      { label: 'Durata', value: '36 mesi' },
+      { label: 'Scadenza', value: 'Dicembre 2027' },
+      { label: 'Interessi stimati', value: '8.550 €' },
     ],
   },
 ];
@@ -65,11 +65,10 @@ export const CreditsAndInvestments: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Credits Section */}
       <div>
         <h3 className="text-lg font-heading font-bold text-foreground mb-4 flex items-center gap-2">
           <Briefcase className="w-5 h-5 text-primary" />
-          Mes Crédits
+          I miei finanziamenti
         </h3>
         <div className="space-y-3">
           {items
@@ -120,11 +119,10 @@ export const CreditsAndInvestments: React.FC = () => {
         </div>
       </div>
 
-      {/* Investments Section */}
       <div>
         <h3 className="text-lg font-heading font-bold text-foreground mb-4 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-success" />
-          Mes Placements
+          I miei investimenti
         </h3>
         <div className="space-y-3">
           {items

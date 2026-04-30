@@ -21,10 +21,10 @@ export const InvoiceModal: React.FC<InvoiceModalProps> = ({
   onPay,
 }) => {
   const [invoices, setInvoices] = useState<Invoice[]>([
-    { id: '1', provider: 'EDF', amount: 89.50, icon: Zap, dueDate: '15/01/2026' },
-    { id: '2', provider: 'Orange', amount: 49.99, icon: Phone, dueDate: '20/01/2026' },
-    { id: '3', provider: 'Free Mobile', amount: 19.99, icon: Wifi, dueDate: '25/01/2026' },
-    { id: '4', provider: 'Veolia', amount: 45.00, icon: Droplets, dueDate: '28/01/2026' },
+    { id: '1', provider: 'Enel Energia', amount: 89.50, icon: Zap, dueDate: '15/01/2026' },
+    { id: '2', provider: 'TIM', amount: 49.99, icon: Phone, dueDate: '20/01/2026' },
+    { id: '3', provider: 'Vodafone', amount: 19.99, icon: Wifi, dueDate: '25/01/2026' },
+    { id: '4', provider: 'Acea', amount: 45.00, icon: Droplets, dueDate: '28/01/2026' },
   ]);
   const [payingId, setPayingId] = useState<string | null>(null);
   const [paidIds, setPaidIds] = useState<string[]>([]);
@@ -42,21 +42,19 @@ export const InvoiceModal: React.FC<InvoiceModalProps> = ({
   return (
     <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
       <div className="bg-card rounded-2xl card-shadow w-full max-w-md max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="p-6 border-b border-border flex items-center justify-between sticky top-0 bg-card">
           <h2 className="text-xl font-heading font-bold text-foreground">
-            Mes factures
+            Le mie bollette
           </h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-muted rounded-lg transition-colors"
-            aria-label="Fermer"
+            aria-label="Chiudi"
           >
             <X className="w-5 h-5 text-muted-foreground" />
           </button>
         </div>
 
-        {/* Content */}
         <div className="p-6 space-y-4">
           {invoices.map((invoice) => {
             const isPaid = paidIds.includes(invoice.id);
@@ -84,23 +82,23 @@ export const InvoiceModal: React.FC<InvoiceModalProps> = ({
                   <div>
                     <p className="font-semibold text-foreground">{invoice.provider}</p>
                     <p className="text-sm text-muted-foreground">
-                      Échéance : {invoice.dueDate}
+                      Scadenza: {invoice.dueDate}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-foreground mb-1">
-                    {invoice.amount.toLocaleString('fr-FR')} €
+                    {invoice.amount.toLocaleString('it-IT')} €
                   </p>
                   {isPaid ? (
-                    <span className="text-sm text-success font-medium">Payée</span>
+                    <span className="text-sm text-success font-medium">Pagata</span>
                   ) : (
                     <button
                       onClick={() => handlePay(invoice)}
                       disabled={isPaying}
                       className="px-4 py-1.5 bg-primary text-primary-foreground text-sm rounded-lg font-medium hover:bg-primary/90 disabled:opacity-70 transition-colors"
                     >
-                      {isPaying ? 'Paiement...' : 'Payer'}
+                      {isPaying ? 'Pagamento...' : 'Paga'}
                     </button>
                   )}
                 </div>

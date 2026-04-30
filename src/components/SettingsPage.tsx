@@ -15,24 +15,21 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ isOpen, onClose }) =
   return (
     <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
       <div className="bg-card rounded-2xl card-shadow w-full max-w-md max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="p-6 border-b border-border flex items-center justify-between sticky top-0 bg-card">
-          <h2 className="text-xl font-heading font-bold text-foreground">Paramètres</h2>
+          <h2 className="text-xl font-heading font-bold text-foreground">Impostazioni</h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-muted rounded-lg transition-colors"
-            aria-label="Fermer"
+            aria-label="Chiudi"
           >
             <X className="w-5 h-5 text-muted-foreground" />
           </button>
         </div>
 
-        {/* Content */}
         <div className="p-6 space-y-6">
-          {/* Theme */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              Apparence
+              Aspetto
             </h3>
             <div className="bg-muted rounded-xl p-1 flex">
               <button
@@ -44,7 +41,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ isOpen, onClose }) =
                 }`}
               >
                 <Sun className="w-5 h-5" />
-                <span className="font-medium">Clair</span>
+                <span className="font-medium">Chiaro</span>
               </button>
               <button
                 onClick={() => setTheme('dark')}
@@ -55,35 +52,33 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ isOpen, onClose }) =
                 }`}
               >
                 <Moon className="w-5 h-5" />
-                <span className="font-medium">Sombre</span>
+                <span className="font-medium">Scuro</span>
               </button>
             </div>
           </div>
 
-          {/* Language */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              Langue
+              Lingua
             </h3>
             <button className="w-full flex items-center justify-between p-4 bg-muted rounded-xl hover:bg-muted/70 transition-colors">
               <div className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-muted-foreground" />
-                <span className="font-medium text-foreground">Français</span>
+                <span className="font-medium text-foreground">Italiano</span>
               </div>
               <ChevronRight className="w-5 h-5 text-muted-foreground" />
             </button>
           </div>
 
-          {/* Notifications */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              Notifications
+              Notifiche
             </h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between p-4 bg-muted rounded-xl">
                 <div className="flex items-center gap-3">
                   <Bell className="w-5 h-5 text-muted-foreground" />
-                  <span className="font-medium text-foreground">Notifications push</span>
+                  <span className="font-medium text-foreground">Notifiche push</span>
                 </div>
                 <div className="w-12 h-6 bg-primary rounded-full relative cursor-pointer">
                   <div className="absolute right-1 top-1 w-4 h-4 bg-primary-foreground rounded-full" />
@@ -92,15 +87,14 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ isOpen, onClose }) =
             </div>
           </div>
 
-          {/* Security */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              Sécurité
+              Sicurezza
             </h3>
             <button className="w-full flex items-center justify-between p-4 bg-muted rounded-xl hover:bg-muted/70 transition-colors">
               <div className="flex items-center gap-3">
                 <Shield className="w-5 h-5 text-muted-foreground" />
-                <span className="font-medium text-foreground">Changer le mot de passe</span>
+                <span className="font-medium text-foreground">Cambia password</span>
               </div>
               <ChevronRight className="w-5 h-5 text-muted-foreground" />
             </button>

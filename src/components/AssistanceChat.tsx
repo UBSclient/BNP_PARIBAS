@@ -17,7 +17,7 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Bienvenue sur l\'assistance Intesa Sanpaolo. Comment pouvons-nous vous aider aujourd\'hui ?',
+      text: 'Benvenuto nell\'assistenza Intesa Sanpaolo. Come possiamo aiutarla oggi?',
       isBot: true,
       timestamp: new Date(),
     },
@@ -37,11 +37,10 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
     setMessages([...messages, userMessage]);
     setInput('');
 
-    // Simulate bot response
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Merci pour votre message. Un conseiller va prendre en charge votre demande dans les plus brefs délais.',
+        text: 'Grazie per il suo messaggio. Un consulente prenderà in carico la sua richiesta al più presto.',
         isBot: true,
         timestamp: new Date(),
       };
@@ -54,31 +53,29 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
   return (
     <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
       <div className="bg-card rounded-2xl card-shadow w-full max-w-md h-[600px] max-h-[90vh] flex flex-col">
-        {/* Header */}
         <div className="p-4 border-b border-border flex items-center justify-between bg-primary text-primary-foreground rounded-t-2xl">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               className="p-2 hover:bg-primary-foreground/10 rounded-lg transition-colors"
-              aria-label="Retour"
+              aria-label="Indietro"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
             <div>
-              <h2 className="font-heading font-bold">Assistance Intesa Sanpaolo</h2>
-              <p className="text-sm text-primary-foreground/70">En ligne</p>
+              <h2 className="font-heading font-bold">Assistenza Intesa Sanpaolo</h2>
+              <p className="text-sm text-primary-foreground/70">Online</p>
             </div>
           </div>
           <button
             onClick={onClose}
             className="p-2 hover:bg-primary-foreground/10 rounded-lg transition-colors"
-            aria-label="Fermer"
+            aria-label="Chiudi"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.map((message) => (
             <div
@@ -105,7 +102,7 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
                     message.isBot ? 'text-muted-foreground' : 'text-primary-foreground/70'
                   }`}
                 >
-                  {message.timestamp.toLocaleTimeString('fr-FR', {
+                  {message.timestamp.toLocaleTimeString('it-IT', {
                     hour: '2-digit',
                     minute: '2-digit',
                   })}
@@ -115,7 +112,6 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
           ))}
         </div>
 
-        {/* Input */}
         <div className="p-4 border-t border-border">
           <div className="flex gap-2">
             <input
@@ -123,13 +119,13 @@ export const AssistanceChat: React.FC<AssistanceChatProps> = ({ isOpen, onClose 
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Votre message..."
+              placeholder="Il suo messaggio..."
               className="flex-1 px-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <button
               onClick={handleSend}
               className="p-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
-              aria-label="Envoyer"
+              aria-label="Invia"
             >
               <Send className="w-5 h-5" />
             </button>
